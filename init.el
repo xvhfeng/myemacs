@@ -20,6 +20,10 @@
   (package-install 'undo-tree))    ;;自动安装撤销插件包
 (when (not (package-installed-p 'google-c-style))
   (package-install 'google-c-style))  
+(when (not (package-installed-p 'cedet))
+  (package-install 'cedet))  
+(when (not (package-installed-p 'autopair))
+  (package-install 'autopair))  
 
 
 ;自定义的lisp包
@@ -28,10 +32,14 @@
 
 ;emacs 自带的
 (require 'ibuffer)
+(require 'cc-mode)
+
 
 
 ;安装的插件
 (require 'init-google-c-style)
+(require 'init-undo-tree)
+;(require 'init-cedet)
 
 
 
