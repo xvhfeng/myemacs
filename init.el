@@ -24,6 +24,11 @@
   (package-install 'cedet))  
 (when (not (package-installed-p 'autopair))
   (package-install 'autopair))  
+(when (not (package-installed-p 'multiple-cursors))
+  (package-install 'multiple-cursors))
+(when (not (package-installed-p 'helm))
+  (package-install 'helm))
+
 
 
 ;自定义的lisp包
@@ -39,6 +44,9 @@
 ;安装的插件
 (require 'init-google-c-style)
 (require 'init-undo-tree)
+(require 'init-autopair)
+;(require 'init-helm)
+(require 'init-hideshow)
 ;(require 'init-cedet)
 
 

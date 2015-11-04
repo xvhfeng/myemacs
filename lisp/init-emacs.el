@@ -1,6 +1,4 @@
 
-
-
 (setq current-language-environment "UTF-8")    ;;设置中文环境
 (setq locale-coding-system 'utf-8)    ;;设置中文环境
 (prefer-coding-system 'utf-8)    ;;优先读取指定文件编码
@@ -11,7 +9,7 @@
 (set-selection-coding-system 'gb18030)    ;;选择块编码
 (set-terminal-coding-system 'utf-8)    ;;终端编码
 (set-keyboard-coding-system 'utf-8)    ;;键盘输入编码
-(set-default-font "Consolas-11")    ;;设置英文字体
+(set-default-font "Consolas-13")    ;;设置英文字体
 (set-fontset-font (frame-parameter nil 'font)    ;;设置中文字体
                   'han '("微软雅黑" . "unicode-bmp"))
 
@@ -26,8 +24,7 @@
 (global-undo-tree-mode)    ;;开启反撤销功能
 (global-font-lock-mode t)    ;;进行语法加亮
 (show-paren-mode t)    ;;打开括号匹配显示模式
-(electric-pair-mode t)    ;;开启自带自动补全括号
-
+;(electric-pair-mode t)    ;;开启自带自动补全括号
 
 ;; 去掉工具栏
 (tool-bar-mode nil)
@@ -67,7 +64,7 @@
 (setq gnus-inhibit-startup-message t) 
 ;;关闭gnus启动时的画面 
  
-(setq kill-ring-max 200) 
+(setq kill-ring-max 5000) 
 ;;设置粘贴缓冲条目数量.用一个很大的kill ring(最多的记录个数). 这样防止我不小心删掉重要的东西 
  
 (setq-default auto-fill-function 'do-auto-fill) 
@@ -145,8 +142,16 @@
 (setq whitespace-global-mode t)     ;;全局检测多余空格
 (setq auto-save-default nil)    ;;关闭备份文件
 (setq undo-outer-limit 50000)    ;;撤销限制
-(setq gdb-many-windows t)    ;;开启GDB多窗口调试模式
+(setq gdb-many-windows t)    ;;开启GDBx多窗口调试模式
 (setq compile-command nil)    ;;默认编译参数 (把nil改成"参数"即可)
 
+
+
+(setq max-lisp-eval-depth   1000        ;lisp最大执行深度   500
+      max-specpdl-size      10000       ;最大容量           1000
+      kill-ring-max         1024        ;kill ring          60
+      undo-outer-limit      5000000     ;撤销限制           12000000
+      mark-ring-max         1024        ;mark ring          16
+)
 
 (provide 'init-emacs)

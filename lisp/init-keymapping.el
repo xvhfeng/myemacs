@@ -1,7 +1,4 @@
 
-
-
-
 ;; copy region or whole line(global-set-key "\M-w"
 (global-set-key "\M-w"
 (lambda ()
@@ -32,6 +29,18 @@
 
 (global-set-key (kbd "C-c C-k") 'kill-whole-line)
 (global-set-key (kbd "C-c C-b") 'set-mark-command)
+
+(defun indent-buffer ()
+"Indent the whole buffer."
+(interactive)
+(save-excursion
+  (indent-region (point-min) (point-max) nil)))
+
+(global-set-key (kbd "C-c C-g") 'indent-buffer)
+(global-set-key (kbd "C-c C-,") 'beginning-of-buffer)
+(global-set-key (kbd "C-c C-.") 'end-of-buffer)
+
+
 
 
 (provide 'init-keymapping)
