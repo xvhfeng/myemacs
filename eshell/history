@@ -1,0 +1,11 @@
+ll
+ls
+ls -las
+cd ~/.emacs.d/
+ls
+cd lisp/
+ls
+cat *
+cat * >> el-get-plugin.el
+ls
+vim

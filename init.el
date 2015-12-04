@@ -1,5 +1,5 @@
 ;add the new version cedet first
-(load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.el")
+;(load-file "~/.emacs.d/plugins/cedet-1.1/common/cedet.el")
 
 (add-to-list
    'load-path 
@@ -7,6 +7,14 @@
 
 
 (add-to-list 'load-path "~/.emacs.d/plugins/el-get")
+
+
+;;(load-file "~/.emacs.d/plugins/ctype.el")
+;;(load-file "~/.emacs.d/plugins/hide-region.el") 
+;;(load-file "~/.emacs.d/plugins/hide-line.el")
+;;(load-file "~/.emacs.d/plugins/recentf.el")
+;;(load-file "~/.emacs.d/plugins/rect-mark.el")
+;;(load-file "~/.emacs.d/plugins/folding.el")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -35,9 +43,9 @@
 (el-get-bundle yasnippet)
 
 ;; Locally defined recipe
-;;(el-get-bundle helm
- ;; :url "https://github.com/emacs-helm/helm.git"
-  ;; :features helm)
+(el-get-bundle helm
+ :url "https://github.com/emacs-helm/helm.git"
+ :features helm)
 
 ;; With initialization code
 ;;(el-get-bundle zenburn-theme
@@ -46,29 +54,36 @@
 
 
 ;emacs 自带的
-(require 'ibuffer)
+;;(require 'ibuffer)
 (require 'cc-mode)
 
 
 
 ;安装的插件
-(require 'init-cedet)
+;;(require 'init-cedet)
 (require 'init-google-c-style)
 (require 'init-undo-tree)
 (require 'init-autopair)
-;(require 'init-helm)
+(require 'init-helm)
 (require 'init-hideshow)
-(require 'init-md)
-(require 'init-mc)
-(require 'init-er)
+(require 'init-markdown)
+(require 'init-multiple-cursors)
+(require 'init-expand-region)
 (require 'init-acejump)
 (require 'init-powerline)
 (require 'init-iimage)
 (require 'init-evil)
+;;(require 'init-eshell)
 
 ;自定义的lisp包
 (require 'init-emacs)
 (require 'init-keymapping)
+(require 'init-rect-mark)
+(require 'init-yafolding)
+(require 'init-ctype)
+(require 'init-sourcepair)
+(require 'init-org)
+;; (require 'init-occur)
 
 
 

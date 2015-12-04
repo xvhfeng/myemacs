@@ -4,7 +4,7 @@
 (prefer-coding-system 'utf-8)    ;;优先读取指定文件编码
 (setq default-buffer-file-coding-system 'utf-8)    ;;缓冲区编码
 (setq default-process-coding-system 'utf-8)    ;;进程输出输入编码
-(setq file-name-coding-system 'gb18030)    ;;文件名编码
+(setq file-name-coding-system 'utf-8)    ;;文件名编码
 
 (set-selection-coding-system 'gb18030)    ;;选择块编码
 (set-terminal-coding-system 'utf-8)    ;;终端编码
@@ -12,6 +12,8 @@
 (set-default-font "Consolas-13")    ;;设置英文字体
 (set-fontset-font (frame-parameter nil 'font)    ;;设置中文字体
                   'han '("微软雅黑" . "unicode-bmp"))
+
+
 
 
 (setq initial-scratch-message nil)    ;;关闭多余缓冲区内文字
@@ -27,7 +29,7 @@
 ;(electric-pair-mode t)    ;;开启自带自动补全括号
 
 ;; 去掉工具栏
-(tool-bar-mode nil)
+;; (tool-bar-mode nil)
 
 ;;在左边显示行号
 (global-linum-mode 'linum-mode)
@@ -36,8 +38,6 @@
 ;;背景设置成黑色，字体是绿色
 (set-foreground-color "green")
 (set-background-color "black")
-
-(global-font-lock-mode t);语法高亮 
 
 (fset 'yes-or-no-p 'y-or-n-p);以 y/n代表 yes/no，可能你觉得不需要，呵呵。 
 
@@ -126,7 +126,7 @@
  '(show-paren-match ((((class color) (background light))
   (:background nil :foreground "#ff0000" :bold t)))))    ;;括号匹配颜色配置
 (set-default 'truncate-lines t)    ;;关闭自动换行功能
-(setq default-major-mode 'text-mode)    ;;打开缺省文本模式
+;; (setq default-major-mode 'text-mode)    ;;打开缺省文本模式
 (mouse-wheel-mode t)    ;;开启鼠标滚轮
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))    ;;一次滚动一行
 (setq mouse-wheel-follow-mouse 't)    ;;鼠标滚动窗口

@@ -1,5 +1,6 @@
 
 (require 'cedet)
+(require 'eieio)
 
  (semantic-load-enable-minimum-features)
 (semantic-load-enable-code-helpers)
